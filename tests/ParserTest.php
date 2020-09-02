@@ -71,6 +71,16 @@ final class ParserTest extends TestCase
         $this->assertCount(4, $chunks[2]->getLines());
     }
 
+    public function testParseWithSpacesInFileNames(): void
+    {
+        $content = FileUtils::getFileContent(__DIR__ . '/fixtures/patch3.txt');
+
+        $diffs = $this->parser->parse($content);
+
+        $this->assertEquals('a/Foo Bar.txt', $diffs[0]->getFrom());
+        $this->assertEquals('b/Foo Bar.txt', $diffs[0]->getTo());
+    }
+
     public function testParseWithRemovedLines(): void
     {
         $content = <<<END

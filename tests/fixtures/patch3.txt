@@ -1,0 +1,9 @@
+diff --git a/Foo Bar.txt b/Foo Bar.txt
+index abcdefg..abcdefh 100644
+--- a/Foo Bar.txt
++++ b/Foo Bar.txt
+@@ -20,4 +20,5 @@ class Foo
+     const ONE = 1;
+     const TWO = 2;
++    const THREE = 3;
+     const FOUR = 4;
